@@ -48,20 +48,20 @@ SELECT
 FROM retail_sales
 GROUP BY product_category
 ORDER BY total_sales DESC;
-Q4: Average Age of Beauty Category Customers
-sql
+### Q4: Average Age of Beauty Category Customers
+```sql
 SELECT 
     ROUND(AVG(age), 2) as average_age
 FROM retail_sales
 WHERE product_category = 'Beauty';
-Q5: High-Value Transactions
-sql
+### Q5: High-Value Transactions
+```sql
 SELECT *
 FROM retail_sales
 WHERE total_amount > 1000
 ORDER BY total_amount DESC;
-Q6: Transaction Count by Gender and Category
-sql
+### Q6: Transaction Count by Gender and Category
+```sql
 SELECT 
     gender,
     product_category,
@@ -69,8 +69,8 @@ SELECT
 FROM retail_sales
 GROUP BY gender, product_category
 ORDER BY product_category, transaction_count DESC;
-Q7: Monthly Average Sales and Best Selling Month
-sql
+### Q7: Monthly Average Sales and Best Selling Month
+```sql
 -- Monthly average sales
 SELECT 
     EXTRACT(YEAR FROM transaction_date) as year,
@@ -104,8 +104,8 @@ SELECT
     total_sales
 FROM ranked_months
 WHERE sales_rank = 1;
-Q8: Top 5 Customers by Total Sales
-sql
+### Q8: Top 5 Customers by Total Sales
+```sql
 SELECT 
     customer_id,
     SUM(total_amount) as total_spent,
@@ -114,16 +114,16 @@ FROM retail_sales
 GROUP BY customer_id
 ORDER BY total_spent DESC
 LIMIT 5;
-Q9: Unique Customers per Category
-sql
+### Q9: Unique Customers per Category
+```sql
 SELECT 
     product_category,
     COUNT(DISTINCT customer_id) as unique_customers
 FROM retail_sales
 GROUP BY product_category
 ORDER BY unique_customers DESC;
-Q10: Seasonal Order Analysis
-sql
+### Q10: Seasonal Order Analysis
+```sql
 SELECT 
     CASE 
         WHEN EXTRACT(MONTH FROM transaction_date) IN (12, 1, 2) THEN 'Winter'
