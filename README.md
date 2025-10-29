@@ -41,7 +41,7 @@ WHERE product_category = 'Clothing'
   AND EXTRACT(YEAR FROM transaction_date) = 2023
   AND EXTRACT(MONTH FROM transaction_date) = 11;
 ### Q3: Total Sales by Category
-``` sql
+```sql
 SELECT 
     product_category,
     SUM(total_amount) as total_sales
