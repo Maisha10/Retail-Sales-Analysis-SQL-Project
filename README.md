@@ -31,7 +31,7 @@ This project analyzes retail sales data to uncover business insights using SQL q
 SELECT *
 FROM retail_sales
 WHERE transaction_date = '2023-11-05';
-
+```
 ### Q2: Clothing Category with High Quantity in November 2023
 ```sql
 SELECT *
@@ -40,6 +40,7 @@ WHERE product_category = 'Clothing'
   AND quantity > 2
   AND EXTRACT(YEAR FROM transaction_date) = 2023
   AND EXTRACT(MONTH FROM transaction_date) = 11;
+```
 ### Q3: Total Sales by Category
 ```sql
 SELECT 
@@ -48,18 +49,21 @@ SELECT
 FROM retail_sales
 GROUP BY product_category
 ORDER BY total_sales DESC;
+```
 ### Q4: Average Age of Beauty Category Customers
 ```sql
 SELECT 
     ROUND(AVG(age), 2) as average_age
 FROM retail_sales
 WHERE product_category = 'Beauty';
+```
 ### Q5: High-Value Transactions
 ```sql
 SELECT *
 FROM retail_sales
 WHERE total_amount > 1000
 ORDER BY total_amount DESC;
+```
 ### Q6: Transaction Count by Gender and Category
 ```sql
 SELECT 
@@ -69,6 +73,7 @@ SELECT
 FROM retail_sales
 GROUP BY gender, product_category
 ORDER BY product_category, transaction_count DESC;
+```
 ### Q7: Monthly Average Sales and Best Selling Month
 ```sql
 -- Monthly average sales
@@ -104,6 +109,7 @@ SELECT
     total_sales
 FROM ranked_months
 WHERE sales_rank = 1;
+```
 ### Q8: Top 5 Customers by Total Sales
 ```sql
 SELECT 
@@ -114,6 +120,7 @@ FROM retail_sales
 GROUP BY customer_id
 ORDER BY total_spent DESC
 LIMIT 5;
+```
 ### Q9: Unique Customers per Category
 ```sql
 SELECT 
@@ -122,6 +129,7 @@ SELECT
 FROM retail_sales
 GROUP BY product_category
 ORDER BY unique_customers DESC;
+```
 ### Q10: Seasonal Order Analysis
 ```sql
 SELECT 
@@ -136,7 +144,7 @@ SELECT
 FROM retail_sales
 GROUP BY season
 ORDER BY order_count DESC;
-
+```
 ## Key Findings
 Based on the dataset analysis:
 
